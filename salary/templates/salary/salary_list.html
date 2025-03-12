@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h2>Salary List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Basic Salary</th>
+                <th>DA</th>
+                <th>HRA</th>
+                <th>Conveyance</th>
+                <th>Medical</th>
+                <th>Special Allowance</th>
+                <th>Gross Salary</th>
+                <th>Net Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for salary in salaries %}
+            <tr>
+                <td>{{ salary.employee.name }}</td>
+                <td>{{ salary.basic_salary }}</td>
+                <td>{{ salary.da }}</td>
+                <td>{{ salary.hra }}</td>
+                <td>{{ salary.conveyance }}</td>
+                <td>{{ salary.medical }}</td>
+                <td>{{ salary.special_allowance }}</td>
+                <td>{{ salary.gross_salary }}</td>
+                <td>{{ salary.net_salary }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9">No salary records available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
