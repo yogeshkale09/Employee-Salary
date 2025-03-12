@@ -6,7 +6,7 @@ from reportlab.pdfgen import canvas
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Employee, Salary
 from .forms import SalaryForm, EmployeeForm
-# Create your views here.
+# Create your views here.nn
 
 
 
